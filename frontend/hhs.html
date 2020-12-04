@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style> 
+      input[type=text] {
+        width: 75%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="http://localhost:3000/api/patients" method="post">
+      <label for="fname">First Name</label>
+      <input type="text" id="firstName" name="firstName">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lastName" name="lastName">
+      <label for="lname">Date of Birth </label>
+      <input type="text" id="dateOfBirth" name="dateOfBirth">
+      <label for="lname">Gender</label>
+      <input type="text" id="gender" name="gender">
+      <label for="lname">Health Card Number</label>
+      <input type="text" id="healthCardNum" name="healthCardNum">
+      <input type="submit" value="Add">
+    </form>
+
+    <script>
+      fetch("http://localhost:3000/api/patients")
+        .then(response => response.json())
+        .then(data => console.log(data))
+    </script>
+  </body>
+</html>
